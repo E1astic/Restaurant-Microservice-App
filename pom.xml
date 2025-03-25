@@ -14,27 +14,18 @@
 	<artifactId>restaurant</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>restaurant</name>
-	<description>Internship training project "Restaurant"</description>
+	<description>Учебный многомодульный проект "Ресторан" в рамках стажировки в Лиге Цифровой Экономики</description>
 
 	<packaging>pom</packaging>
 
+	<properties>
+		<sp.version>3.4.3</sp.version>
+	</properties>
+
 	<modules>
-		<module>dependency_bom</module>
+		<module>dependency-bom</module>
 		<module>kitchen-service</module>
 		<module>waiter-service</module>
 	</modules>
 
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
 </project>

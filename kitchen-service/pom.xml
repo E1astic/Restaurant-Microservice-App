@@ -5,34 +5,16 @@
 
 	<parent>
 		<groupId>ru.liga</groupId>
-		<artifactId>dependency_bom</artifactId>
+		<artifactId>dependency-bom</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../dependency_bom/pom.xml</relativePath>
+		<relativePath>../dependency-bom/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>kitchen-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kitchen-service</name>
-	<description>Kitchen service</description>
+	<description>Сервис кухни</description>
 
 	<packaging>jar</packaging>
-
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
-
-	<dependencies>
-
-	</dependencies>
 
 </project>
