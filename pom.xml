@@ -18,10 +18,6 @@
 
 	<packaging>pom</packaging>
 
-	<properties>
-		<sp.version>3.4.3</sp.version>
-	</properties>
-
 	<modules>
 		<module>dependency-bom</module>
 		<module>kitchen-service</module>
