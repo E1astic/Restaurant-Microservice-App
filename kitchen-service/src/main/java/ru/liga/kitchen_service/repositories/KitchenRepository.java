@@ -7,6 +7,7 @@ import ru.liga.kitchen_service.utils.OrderNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class KitchenRepository {
@@ -23,16 +24,21 @@ public class KitchenRepository {
     }
 
     public void rejectOrder(int id){
-        if(id<0 || id>=orders.size()){
-            throw new OrderNotFoundException(ERROR_MESSAGE);
-        }
-        orders.get(id).setStatus(KitchenStatus.REJECTED);  // заказ отклонен
+        findOrderById(id)
+                .orElseThrow(() -> new OrderNotFoundException(ERROR_MESSAGE))
+                .setStatus(KitchenStatus.REJECTED);  // заказ отклонен
     }
 
     public void readyOrder(int id){
+        findOrderById(id)
+                .orElseThrow(() -> new OrderNotFoundException(ERROR_MESSAGE))
+                .setStatus(KitchenStatus.REJECTED);  // заказ готов
+    }
+
+    private Optional<KitchenOrder> findOrderById(int id){
         if(id<0 || id>=orders.size()){
-            throw new OrderNotFoundException(ERROR_MESSAGE);
+            return Optional.empty();
         }
-        orders.get(id).setStatus(KitchenStatus.READY);     // заказ готов
+        return Optional.ofNullable(orders.get(id));
     }
 }

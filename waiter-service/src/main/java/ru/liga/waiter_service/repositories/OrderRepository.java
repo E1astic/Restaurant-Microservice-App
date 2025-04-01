@@ -7,6 +7,7 @@ import ru.liga.waiter_service.utils.OrderStatus;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class OrderRepository {
@@ -19,10 +20,7 @@ public class OrderRepository {
     }
 
     public WaiterOrder getOrderById(int id){
-        if(id<0 || id>=orders.size()){
-            throw new OrderNotFoundException(ERROR_MESSAGE);
-        }
-        return orders.get(id);
+        return findOrderById(id).orElseThrow(() -> new OrderNotFoundException(ERROR_MESSAGE));
     }
 
     public OrderStatus getOrderStatusById(int id){
@@ -32,6 +30,13 @@ public class OrderRepository {
     public int addOrder(WaiterOrder order){
         orders.add(order);
         return orders.size()-1;   // возвращаем индекс добавленного элемента, то есть последнего
+    }
+
+    private Optional<WaiterOrder> findOrderById(int id){
+        if(id<0 || id>=orders.size()){
+            return Optional.empty();
+        }
+        return Optional.ofNullable(orders.get(id));
     }
 
 }

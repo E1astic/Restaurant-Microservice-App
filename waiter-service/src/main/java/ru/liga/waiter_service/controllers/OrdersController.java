@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.liga.waiter_service.dto.ClientOrder;
 import ru.liga.waiter_service.dto.WaiterOrder;
-import ru.liga.waiter_service.services.OrderService;
+import ru.liga.waiter_service.services.OrderServiceImpl;
 import ru.liga.waiter_service.utils.OrderStatus;
 
 import java.util.List;
@@ -15,10 +15,10 @@ import java.util.Map;
 @RequestMapping("/orders")
 public class OrdersController {
 
-    private final OrderService orderService;
+    private final OrderServiceImpl orderService;
 
     @Autowired
-    public OrdersController(OrderService orderService) {
+    public OrdersController(OrderServiceImpl orderService) {
         this.orderService = orderService;
     }
 
