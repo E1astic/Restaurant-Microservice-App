@@ -1,11 +1,12 @@
 package ru.liga.kitchen_service.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.liga.kitchen_service.dto.ClientOrder;
 import ru.liga.kitchen_service.dto.KitchenOrder;
-import ru.liga.kitchen_service.services.KitchenServiceImpl;
+import ru.liga.kitchen_service.services.KitchenService;
 
 import java.util.List;
 import java.util.Map;
@@ -16,10 +17,10 @@ public class KitchenController {
 
     private static final String SUCCESS_STATUS_RESPONSE = "The status has been successfully changed";
 
-    private final KitchenServiceImpl kitchenService;
+    private final KitchenService kitchenService;
 
     @Autowired
-    public KitchenController(KitchenServiceImpl kitchenService) {
+    public KitchenController(KitchenService kitchenService) {
         this.kitchenService = kitchenService;
     }
 

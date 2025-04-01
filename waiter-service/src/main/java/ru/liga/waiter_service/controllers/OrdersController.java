@@ -1,11 +1,12 @@
 package ru.liga.waiter_service.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.liga.waiter_service.dto.ClientOrder;
 import ru.liga.waiter_service.dto.WaiterOrder;
-import ru.liga.waiter_service.services.OrderServiceImpl;
+import ru.liga.waiter_service.services.OrderService;
 import ru.liga.waiter_service.utils.OrderStatus;
 
 import java.util.List;
@@ -15,10 +16,10 @@ import java.util.Map;
 @RequestMapping("/orders")
 public class OrdersController {
 
-    private final OrderServiceImpl orderService;
+    private final OrderService orderService;
 
     @Autowired
-    public OrdersController(OrderServiceImpl orderService) {
+    public OrdersController(OrderService orderService) {
         this.orderService = orderService;
     }
 
