@@ -6,8 +6,6 @@ import ru.liga.kitchen_service.dto.ClientOrder;
 import ru.liga.kitchen_service.dto.KitchenOrder;
 import ru.liga.kitchen_service.repositories.KitchenRepository;
 import ru.liga.kitchen_service.utils.KitchenStatus;
-import ru.liga.kitchen_service.utils.OrderNotFoundException;
-
 
 import java.util.List;
 
@@ -25,35 +23,16 @@ public class KitchenService {
         return kitchenRepository.getAllOrders();
     }
 
-    public int addOrder(ClientOrder clientOrder) {
+    public int acceptOrder(ClientOrder clientOrder){
         return kitchenRepository.addOrder(mapToKitchenOrder(clientOrder));
     }
 
-    public void acceptOrder(int id){
-        try{
-            kitchenRepository.acceptOrder(id);
-        }
-        catch(OrderNotFoundException e){
-            throw new OrderNotFoundException(e.getMessage());
-        }
-    }
-
     public void rejectOrder(int id){
-        try{
-            kitchenRepository.rejectOrder(id);
-        }
-        catch(OrderNotFoundException e){
-            throw new OrderNotFoundException(e.getMessage());
-        }
+        kitchenRepository.rejectOrder(id);
     }
 
     public void readyOrder(int id){
-        try{
-            kitchenRepository.readyOrder(id);
-        }
-        catch(OrderNotFoundException e){
-            throw new OrderNotFoundException(e.getMessage());
-        }
+        kitchenRepository.readyOrder(id);
     }
 
 
@@ -62,7 +41,7 @@ public class KitchenService {
                 .builder()
                 .client(clientOrder.getClient())
                 .dish(clientOrder.getDish())
-                .status(KitchenStatus.AWAITING)   // статус - ожидает начала работы
+                .status(KitchenStatus.PREPARING)   // статус - принят и начал готовиться
                 .build();
     }
 }

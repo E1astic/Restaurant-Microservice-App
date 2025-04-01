@@ -21,34 +21,17 @@
 			"response": []
 		},
 		{
-			"name": "Set accept status",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"url": {
-					"raw": "{{baseURLKitchenService}}{{orders}}/0{{status}}{{accept}}",
-					"host": [
-						"{{baseURLKitchenService}}{{orders}}"
-					],
-					"path": [
-						"0{{status}}{{accept}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Set reject status",
 			"request": {
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "{{baseURLKitchenService}}{{orders}}/0{{status}}{{reject}}",
+					"raw": "{{baseURLKitchenService}}{{orders}}/3{{status}}{{reject}}",
 					"host": [
 						"{{baseURLKitchenService}}{{orders}}"
 					],
 					"path": [
-						"0{{status}}{{reject}}"
+						"3{{status}}{{reject}}"
 					]
 				}
 			},

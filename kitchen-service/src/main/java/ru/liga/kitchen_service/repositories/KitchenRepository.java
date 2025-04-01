@@ -22,13 +22,6 @@ public class KitchenRepository {
         return orders.size()-1;
     }
 
-    public void acceptOrder(int id){
-        if(id<0 || id>=orders.size()){
-            throw new OrderNotFoundException(ERROR_MESSAGE);
-        }
-        orders.get(id).setStatus(KitchenStatus.PREPARING);  // заказ принят и начинает готовиться
-    }
-
     public void rejectOrder(int id){
         if(id<0 || id>=orders.size()){
             throw new OrderNotFoundException(ERROR_MESSAGE);

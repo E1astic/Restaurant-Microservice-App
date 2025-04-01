@@ -26,12 +26,7 @@ public class OrderRepository {
     }
 
     public OrderStatus getOrderStatusById(int id){
-        try {
-            return getOrderById(id).getStatus();
-        }
-        catch(OrderNotFoundException e){
-            throw new OrderNotFoundException(e.getMessage());
-        }
+        return getOrderById(id).getStatus();
     }
 
     public int addOrder(WaiterOrder order){

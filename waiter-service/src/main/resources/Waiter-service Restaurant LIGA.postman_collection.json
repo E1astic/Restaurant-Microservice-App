@@ -49,12 +49,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURLWaiterService}}{{orders}}/0",
+					"raw": "{{baseURLWaiterService}}{{orders}}/3",
 					"host": [
 						"{{baseURLWaiterService}}{{orders}}"
 					],
 					"path": [
-						"0"
+						"3"
 					]
 				}
 			},
