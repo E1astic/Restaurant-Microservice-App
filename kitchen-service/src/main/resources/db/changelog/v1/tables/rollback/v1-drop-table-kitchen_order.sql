@@ -1,0 +1,1 @@
+drop table kitchen_order;

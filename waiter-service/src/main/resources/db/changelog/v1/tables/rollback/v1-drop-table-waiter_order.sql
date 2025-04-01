@@ -1,0 +1,1 @@
+drop table waiter_order;

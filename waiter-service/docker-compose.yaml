@@ -1,0 +1,16 @@
+services:
+  db_waiter_service:
+    image: postgres
+    container_name: db_waiter_service
+    environment:
+      POSTGRES_DB: waiter_service
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - waiter_service_data:/var/lib/postgresql/data
+
+volumes:
+  waiter_service_data:
+
