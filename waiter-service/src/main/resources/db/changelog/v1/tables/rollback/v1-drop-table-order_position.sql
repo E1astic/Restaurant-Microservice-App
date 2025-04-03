@@ -1,1 +1,1 @@
-drop table order_position;
+drop table if exists order_position;

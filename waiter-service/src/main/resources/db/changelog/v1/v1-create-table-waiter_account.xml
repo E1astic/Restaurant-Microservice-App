@@ -5,11 +5,6 @@
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <changeSet id="v1-create-table-waiter_account" author="Roman Filimonov">
-        <preConditions onFail="MARK_RAN">
-            <not>
-                <tableExists tableName="waiter_account"/>
-            </not>
-        </preConditions>
         <sqlFile path="tables/v1-create-table-waiter_account.sql" relativeToChangelogFile="true"/>
         <rollback>
             <sqlFile path="tables/rollback/v1-drop-table-waiter_account.sql" relativeToChangelogFile="true"/>

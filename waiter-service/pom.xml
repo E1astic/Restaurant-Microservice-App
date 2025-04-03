@@ -21,7 +21,6 @@
 		<dependency>
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>
-			<version>1.0.2</version>
 		</dependency>
 	</dependencies>
 
@@ -30,7 +29,6 @@
 			<plugin>
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-maven-plugin</artifactId>
-				<version>4.9.1</version>
 				<configuration>
 					<propertyFile>liquibase.properties</propertyFile>
 				</configuration>

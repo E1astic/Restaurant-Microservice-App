@@ -1,1 +1,1 @@
-drop table waiter_account;
+drop table if exists waiter_account;

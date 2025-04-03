@@ -1,1 +1,1 @@
-drop table payment;
+drop table if exists payment;
