@@ -1,1 +1,1 @@
-drop table order_to_dish;
+drop table if exists order_to_dish;

@@ -1,1 +1,1 @@
-drop table dish;
+drop table if exists dish;

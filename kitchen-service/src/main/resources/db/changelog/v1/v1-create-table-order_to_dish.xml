@@ -5,11 +5,6 @@
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <changeSet id="v1-create-table-order_to_dish" author="Roman Filimonov">
-        <preConditions onFail="MARK_RAN">
-            <not>
-                <tableExists tableName="order_to_dish"/>
-            </not>
-        </preConditions>
         <sqlFile path="tables/v1-create-table-order_to_dish.sql" relativeToChangelogFile="true"/>
         <rollback>
             <sqlFile path="tables/rollback/v1-drop-table-order_to_dish.sql" relativeToChangelogFile="true"/>

@@ -1,1 +1,1 @@
-drop table kitchen_order;
+drop table if exists kitchen_order;
