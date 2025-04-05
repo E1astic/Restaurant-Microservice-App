@@ -5,7 +5,7 @@ create table if not exists order_to_dish(
     primary key (kitchen_order_id, dish_id)
 );
 
-comment on table order_to_dish is 'Таблица, содержащая список блюд для каждого заказа (содержит составной первичный ключ из ссылок на номер заказа и блюдо)';
+comment on table order_to_dish is 'Таблица, содержащая список блюд для каждого заказа';
 comment on column order_to_dish.kitchen_order_id is 'Внешний ключ на номер заказа (является частью составного первичного ключа)';
 comment on column order_to_dish.dish_id is 'Внешний ключ на блюдо (является частью составного первичного ключа)';
 comment on column order_to_dish.dishes_number is 'Количество блюд в заказе';
