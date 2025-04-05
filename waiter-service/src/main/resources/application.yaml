@@ -13,3 +13,13 @@ management:
   endpoint:
     health:
       show-details: always
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/waiter_service
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: db/changelog/main-changelog.xml
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <include file="v1-create-table-waiter_account.xml" relativeToChangelogFile="true"/>
+    <include file="v1-create-table-menu.xml" relativeToChangelogFile="true"/>
+    <include file="v1-create-table-waiter_order.xml" relativeToChangelogFile="true"/>
+    <include file="v1-create-table-order_position.xml" relativeToChangelogFile="true"/>
+    <include file="v1-create-table-payment.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

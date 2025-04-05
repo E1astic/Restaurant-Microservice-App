@@ -14,5 +14,14 @@ management:
     health:
       show-details: always
 
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5434/kitchen_service
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: db/changelog/main-changelog.xml
+
 
 
