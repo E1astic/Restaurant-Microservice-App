@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace="ru.liga.kitchen_service.mappers.OrderToDishMapper">
+
+    <!-- Добавление одного блюда в заказ -->
+    <insert id="save">
+        INSERT INTO order_to_dish(kitchen_order_id, dish_id, dishes_number)
+        VALUES (#{orderToDish.kitchenOrderId}, #{orderToDish.dishId}, #{orderToDish.dishesNumber})
+    </insert>
+
+    <!-- Добавление списка блюд в заказ -->
+    <insert id="saveAll">
+        INSERT INTO order_to_dish(kitchen_order_id, dish_id, dishes_number)
+        VALUES
+        <foreach collection="orderToDish" index="dishId" item="dishesNumber" separator=",">
+            (#{kitchenOrderId}, #{dishId}, #{dishesNumber})
+        </foreach>
+    </insert>
+</mapper>

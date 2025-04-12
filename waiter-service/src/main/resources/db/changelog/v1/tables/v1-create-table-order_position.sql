@@ -1,8 +1,8 @@
 create table if not exists order_position(
     id bigserial primary key,
     dish_num bigint not null,
-    order_id bigint not null references waiter_order(id),
-    menu_position_id bigint not null references menu(id)
+    order_id bigint not null references waiter_order(id) on delete cascade,
+    menu_position_id bigint not null references menu(id) on delete cascade
 );
 
 comment on table order_position is 'Таблица, содержащая блюда из меню для каждого заказа';

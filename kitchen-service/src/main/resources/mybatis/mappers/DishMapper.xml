@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace="ru.liga.kitchen_service.mappers.DishMapper">
+
+    <!-- Выборка блюда с переданным id -->
+    <select id="findById" resultMap="DishMap">
+        SELECT * FROM dish
+        WHERE id = #{id}
+    </select>
+
+    <!-- Выборка всех блюд с переданными id в списке -->
+    <select id="findByIdIn" resultMap="DishMap">
+        SELECT * FROM dish
+        WHERE id IN
+        <foreach collection="dishIdList" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <resultMap id="DishMap" type="Dish">
+        <result column="id" property="id"/>
+        <result column="balance" property="balance"/>
+        <result column="short_name" property="shortName"/>
+        <result column="dish_composition" property="dishComposition"/>
+    </resultMap>
+
+</mapper>
