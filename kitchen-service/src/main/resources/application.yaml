@@ -22,6 +22,19 @@ spring:
     driver-class-name: org.postgresql.Driver
   liquibase:
     change-log: db/changelog/main-changelog.xml
+  cloud:
+    openfeign:
+      client:
+        config:
+          waiterFeignClient:
+            url: http://localhost:8081/waiter-service
+
+mybatis:
+  mapper-locations: classpath:mybatis/mappers/*.xml
+  type-aliases-package: ru.liga.kitchen_service.models
+  configuration:
+    map-underscore-to-camel-case: true
+
 
 
 

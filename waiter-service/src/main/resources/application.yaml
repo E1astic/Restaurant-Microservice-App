@@ -22,4 +22,10 @@ spring:
     driver-class-name: org.postgresql.Driver
   liquibase:
     change-log: db/changelog/main-changelog.xml
+  cloud:
+    openfeign:
+      client:
+        config:
+          kitchenFeignClient:
+            url: http://localhost:8080/kitchen-service
 

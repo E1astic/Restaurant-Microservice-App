@@ -43,12 +43,12 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "{{baseURLKitchenService}}{{orders}}/0{{status}}{{ready}}",
+					"raw": "{{baseURLKitchenService}}{{orders}}/8{{status}}{{ready}}",
 					"host": [
 						"{{baseURLKitchenService}}{{orders}}"
 					],
 					"path": [
-						"0{{status}}{{ready}}"
+						"8{{status}}{{ready}}"
 					]
 				}
 			},
@@ -61,7 +61,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"dish\": \"Блюдо\",\r\n    \"client\": \"Клиент_1\"\r\n}",
+					"raw": "{\r\n    \"waiterOrderNo\": 3,\r\n    \"dishIdList\": [1,2,3,4]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

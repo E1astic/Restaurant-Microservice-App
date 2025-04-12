@@ -1,0 +1,1 @@
+truncate table waiter_account restart identity cascade;

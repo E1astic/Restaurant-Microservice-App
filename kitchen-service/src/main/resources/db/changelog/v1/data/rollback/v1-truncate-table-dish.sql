@@ -1,0 +1,1 @@
+truncate table dish restart identity cascade;

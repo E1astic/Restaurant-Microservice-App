@@ -1,0 +1,1 @@
+truncate table menu restart identity cascade;
