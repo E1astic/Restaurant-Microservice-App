@@ -1,0 +1,83 @@
+services:
+  zookeeper:
+    image: docker.io/bitnami/zookeeper:3.6.1
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: yes
+    ports:
+      - 22181:2181
+    networks:
+      - kafka_network
+
+  kafka:
+    image: docker.io/bitnami/kafka:2.5.0
+    depends_on:
+      - zookeeper
+    ports:
+      - 9092:9092
+      - 29092:29092
+    environment:
+      KAFKA_HEAP_OPTS: -Xmx512m -Xms512m
+      ALLOW_PLAINTEXT_LISTENER: yes
+      KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_CFG_LISTENERS: INTERNAL://:9092,EXTERNAL://:29092
+      KAFKA_CFG_ADVERTISED_LISTENERS: INTERNAL://kafka:9092,EXTERNAL://${DOCKER_HOST_IP:-localhost}:29092
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+    networks:
+      - kafka_network
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui
+    build:
+      network: host
+    container_name: kafka-ui
+    ports:
+      - 8090:8080
+    restart: always
+    environment:
+      - KAFKA_CLUSTERS_0_NAME=local
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:9092
+      - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper:2181
+    depends_on:
+      - kafka
+      - zookeeper
+    networks:
+      - kafka_network
+
+  akhq:
+    image: tchiotludo/akhq:latest
+    build:
+      network: host
+    container_name: akhq
+    ports:
+      - 29094:8080
+    networks:
+      - kafka_network
+    environment:
+      AKHQ_CONFIGURATION: |
+        akhq:
+          connections:
+              local:
+                properties:
+                  bootstrap.servers: "kafka:9092"
+
+
+  kadeckweb:
+    image: xeotek/kadeck:5.3.0
+    networks:
+      - kafka_network
+    hostname: kadeckweb
+    container_name: kadeckweb
+    ports:
+      - "29095:80"
+    environment:
+      xeotek_kadeck_port: 80
+      xeotek_kadeck_teamid: docker.bQLUoUua4ro
+      xeotek_kadeck_secret: 560cbcf40ea39f8212f51dfe2344054169b1363debe3893c8e7db242f79e62a562c06043cf2cec240651
+    depends_on:
+      - kafka
+      - zookeeper
+
+networks:
+  kafka_network:
+    driver: bridge

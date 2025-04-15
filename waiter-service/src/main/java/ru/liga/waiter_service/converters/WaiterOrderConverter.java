@@ -5,7 +5,7 @@ import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
-import ru.liga.waiter_service.models.dto.KitchenOrderRequest;
+import ru.liga.common.dto.KitchenOrderRequest;
 import ru.liga.waiter_service.models.dto.WaiterOrderRequest;
 import ru.liga.waiter_service.models.dto.WaiterOrderResponse;
 import ru.liga.waiter_service.models.entity.OrderPosition;
@@ -25,9 +25,9 @@ public interface WaiterOrderConverter {
     @Mapping(target = "tableNo", source = "waiterOrderRequest.tableNo")
     WaiterOrder mapToWaiterOrder(WaiterOrderRequest waiterOrderRequest, @Context WaiterAccount waiterAccount);
 
-    @Mapping(target = "waiterOrderNo", source = "waiterId")
-    @Mapping(target = "orderPositions", source = "orderPositions")
-    KitchenOrderRequest mapToKitchenOrderRequest(WaiterOrderRequest waiterOrderRequest);
+    @Mapping(target = "waiterOrderNo", expression = "java(orderId)")
+    @Mapping(target = "orderPositions", source = "waiterOrderRequest.orderPositions")
+    KitchenOrderRequest mapToKitchenOrderRequest(WaiterOrderRequest waiterOrderRequest, Long orderId);
 
     @Mapping(target = "orderStatus", source = "status")
     @Mapping(target = "createDateTime", source = "createDateTime")

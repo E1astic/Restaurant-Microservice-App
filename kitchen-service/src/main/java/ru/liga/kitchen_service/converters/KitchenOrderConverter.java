@@ -2,7 +2,7 @@ package ru.liga.kitchen_service.converters;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import ru.liga.kitchen_service.models.dto.KitchenOrderRequest;
+import ru.liga.common.dto.KitchenOrderRequest;
 import ru.liga.kitchen_service.models.dto.KitchenOrderResponse;
 import ru.liga.kitchen_service.models.entity.KitchenOrder;
 

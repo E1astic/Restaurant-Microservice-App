@@ -28,4 +28,14 @@ spring:
         config:
           kitchenFeignClient:
             url: http://localhost:8080/kitchen-service
-
+  kafka:
+    bootstrap-servers:
+      - localhost:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      order-topic: waiterOrderToKitchenTopic
+      partitions-num: 1
+      replicas-num: 1
+      properties:
+        acks: 1

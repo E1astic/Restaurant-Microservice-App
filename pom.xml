@@ -22,6 +22,7 @@
 		<module>dependency-bom</module>
 		<module>kitchen-service</module>
 		<module>waiter-service</module>
-	</modules>
+        <module>common</module>
+    </modules>
 
 </project>

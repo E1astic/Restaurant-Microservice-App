@@ -1,6 +1,7 @@
 package ru.liga.kitchen_service.services.dish;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import ru.liga.kitchen_service.mappers.DishMapper;
 import ru.liga.kitchen_service.models.entity.Dish;
@@ -19,5 +20,9 @@ public class DishServiceImpl implements DishService {
 
     public List<Dish> getDishesById(List<Long> id) {
         return dishMapper.findByIdIn(id);
+    }
+
+    public int updateDishNums(List<Long> idList, List<Long> newValues){
+        return dishMapper.updateDishNums(idList, newValues);
     }
 }
