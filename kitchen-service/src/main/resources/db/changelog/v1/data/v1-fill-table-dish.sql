@@ -1,9 +1,9 @@
 insert into dish(balance, short_name, dish_composition)
-values(450,'Оливье', 'Яйцо, колбаса, огурец, горох, майонез');
+values(10,'Оливье', 'Яйцо, колбаса, огурец, горох, майонез');
 insert into dish(balance, short_name, dish_composition)
-values(900,'Стейк', 'Мясо, соль, соус');
+values(5,'Стейк', 'Мясо, соль, соус');
 insert into dish(balance, short_name, dish_composition)
-values(1300,'Лосось', 'Лосось, зелень, хлеб');
+values(5,'Лосось', 'Лосось, зелень, хлеб');
 insert into dish(balance, short_name, dish_composition)
-values(250,'Чай', 'Кипяток, травяной сбор');
+values(20,'Чай', 'Кипяток, травяной сбор');
 

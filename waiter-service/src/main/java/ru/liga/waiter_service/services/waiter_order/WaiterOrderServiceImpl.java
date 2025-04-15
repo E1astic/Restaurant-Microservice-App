@@ -57,7 +57,7 @@ public class WaiterOrderServiceImpl implements WaiterOrderService {
         WaiterOrder waiterOrder = waiterOrderConverter.mapToWaiterOrder(waiterOrderRequest, waiterAccount);
         waiterOrderRepository.save(waiterOrder);
         orderPositionService.addOrderPositions(waiterOrder, waiterOrderRequest);
-        kitchenService.sendOrderToKitchen(waiterOrderRequest);
+        kitchenService.sendOrderToKitchen(waiterOrderRequest, waiterOrder);
         return waiterOrder;
     }
 

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.liga.kitchen_service.models.dto.KitchenOrderRequest;
+import ru.liga.common.dto.KitchenOrderRequest;
 import ru.liga.kitchen_service.models.dto.KitchenOrderWithDishesResponse;
 import ru.liga.kitchen_service.models.dto.SimpleKitchenOrderResponse;
 import ru.liga.kitchen_service.models.entity.KitchenOrder;

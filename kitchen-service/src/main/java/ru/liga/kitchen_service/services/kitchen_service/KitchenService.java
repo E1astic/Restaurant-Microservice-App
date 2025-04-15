@@ -1,6 +1,6 @@
 package ru.liga.kitchen_service.services.kitchen_service;
 
-import ru.liga.kitchen_service.models.dto.KitchenOrderRequest;
+import ru.liga.common.dto.KitchenOrderRequest;
 import ru.liga.kitchen_service.models.dto.KitchenOrderResponse;
 import ru.liga.kitchen_service.models.dto.KitchenOrderWithDishesResponse;
 import ru.liga.kitchen_service.models.entity.KitchenOrder;
@@ -17,4 +17,6 @@ public interface KitchenService {
     KitchenOrder acceptOrder(KitchenOrderRequest kitchenOrderRequest);
 
     void setStatus(Long id, String status);
+
+    Long receiveOrder(KitchenOrderRequest kitchenOrderRequest);
 }

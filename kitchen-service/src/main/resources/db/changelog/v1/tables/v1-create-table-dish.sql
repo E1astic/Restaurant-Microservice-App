@@ -6,6 +6,6 @@ create table if not exists dish(
 );
 
 comment on table dish is 'Таблица с блюдами';
-comment on column dish.balance is 'Стоимость блюда';
+comment on column dish.balance is 'Количество блюда на складе';
 comment on column dish.short_name is 'Наименование блюда';
 comment on column dish.balance is 'Состав, ингридиенты блюда';

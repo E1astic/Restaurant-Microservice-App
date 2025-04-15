@@ -28,6 +28,21 @@ spring:
         config:
           waiterFeignClient:
             url: http://localhost:8081/waiter-service
+  kafka:
+    bootstrap-servers:
+      - localhost:29092
+    producer:
+      order-topic: waiterOrderToKitchenTopic
+    consumer:
+      group-id: kitchen-consumer
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
 
 mybatis:
   mapper-locations: classpath:mybatis/mappers/*.xml

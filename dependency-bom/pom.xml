@@ -30,6 +30,7 @@
 		<protobuf.maven.plugin.version>0.6.1</protobuf.maven.plugin.version>
 		<mapstruct.version>1.6.3</mapstruct.version>
 		<mybatis.core.version>3.0.4</mybatis.core.version>
+		<spring.kafka.version>3.3.3</spring.kafka.version>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 		<maven.compiler.plugin>3.14.0</maven.compiler.plugin>
@@ -122,6 +123,20 @@
 				<version>${mapstruct.version}</version>
 			</dependency>
 			<!-- MapStruct -->
+
+			<!-- Kafka -->
+			<dependency>
+				<groupId>org.springframework.kafka</groupId>
+				<artifactId>spring-kafka</artifactId>
+				<version>${spring.kafka.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.kafka</groupId>
+				<artifactId>spring-kafka-test</artifactId>
+				<scope>test</scope>
+				<version>${spring.kafka.version}</version>
+			</dependency>
+			<!-- Kafka -->
 		</dependencies>
 	</dependencyManagement>
 
@@ -168,6 +183,16 @@
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
+		</dependency>
+
+		<!-- Kafka -->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
 		</dependency>
 	</dependencies>
 

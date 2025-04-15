@@ -14,4 +14,6 @@ public interface DishMapper {
     Dish findById (@Param("id") Long id);
 
     List<Dish> findByIdIn (@Param("dishIdList") List<Long> dishIdList);
+
+    int updateDishNums(@Param("idList") List<Long> idList, @Param("newValues") List<Long> newValues);
 }
