@@ -6,6 +6,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 
+/**
+ * Класс конфигурации для Kafka.
+ *
+ * <p>Этот класс настраивает топик Kafka, включая его имя, количество партиций и реплик.
+ * Конфигурация топика загружается из свойств приложения application.yml
+ */
 @Configuration
 public class KafkaConfig {
 
@@ -18,6 +24,15 @@ public class KafkaConfig {
     @Value("${spring.kafka.producer.replicas-num}")
     private int replicasNum;
 
+    /**
+     * Создает и настраивает новый топик Kafka.
+     *
+     * <p>Метод создает экземпляр {@link NewTopic} с заданными параметрами:
+     * именем топика, количеством партиций и реплик. Этот топик будет автоматически создан
+     * при запуске приложения, если он еще не существует.</p>
+     *
+     * @return настроенный топик Kafka в виде объекта {@link NewTopic}.
+     */
     @Bean
     public NewTopic orderTopic() {
         return TopicBuilder

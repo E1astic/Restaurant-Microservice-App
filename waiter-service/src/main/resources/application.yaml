@@ -39,3 +39,9 @@ spring:
       replicas-num: 1
       properties:
         acks: 1
+
+logging:
+  file:
+    name: waiter-service.log
+  level:
+    ru.liga.waiter_service: info

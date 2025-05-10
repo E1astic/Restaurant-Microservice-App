@@ -50,6 +50,11 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
+logging:
+  file:
+    name: kitchen-service.log
+  level:
+    ru.liga.kitchen_service: info
 
 
 

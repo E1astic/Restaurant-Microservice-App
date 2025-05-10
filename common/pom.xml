@@ -7,6 +7,7 @@
         <groupId>ru.liga</groupId>
         <artifactId>dependency-bom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../dependency-bom/pom.xml</relativePath>
     </parent>
 
     <artifactId>common</artifactId>
@@ -15,4 +16,19 @@
     <name>common</name>
     <description>Модуль с общими компонентами для сервисов waiter-service и kitchen-service</description>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

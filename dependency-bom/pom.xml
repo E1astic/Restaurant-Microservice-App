@@ -31,6 +31,10 @@
 		<mapstruct.version>1.6.3</mapstruct.version>
 		<mybatis.core.version>3.0.4</mybatis.core.version>
 		<spring.kafka.version>3.3.3</spring.kafka.version>
+		<springdoc.openapi.version>2.8.6</springdoc.openapi.version>
+		<maven.checkstyle.version>3.1.2</maven.checkstyle.version>
+		<testcontainers.version>1.20.6</testcontainers.version>
+
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 		<maven.compiler.plugin>3.14.0</maven.compiler.plugin>
@@ -137,6 +141,29 @@
 				<version>${spring.kafka.version}</version>
 			</dependency>
 			<!-- Kafka -->
+
+			<!-- Swagger -->
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+				<version>${springdoc.openapi.version}</version>
+			</dependency>
+			<!-- Swagger -->
+
+			<!-- Testcontainers -->
+			<dependency>
+				<groupId>org.testcontainers</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${testcontainers.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.testcontainers</groupId>
+				<artifactId>junit-jupiter</artifactId>
+				<version>${testcontainers.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<!-- Testcontainers -->
 		</dependencies>
 	</dependencyManagement>
 
@@ -194,6 +221,12 @@
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka-test</artifactId>
 		</dependency>
+
+		<!-- Swagger -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+		</dependency>
 	</dependencies>
 
 
@@ -235,8 +268,24 @@
 					<artifactId>liquibase-maven-plugin</artifactId>
 					<version>${liquibase.plugin.version}</version>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>${maven.checkstyle.version}</version>
+					<configuration>
+						<configLocation>checkstyle.xml</configLocation>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>check</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
+
 
 		<plugins>
 			<plugin>

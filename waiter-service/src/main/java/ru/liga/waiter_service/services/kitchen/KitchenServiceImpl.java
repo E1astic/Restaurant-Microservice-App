@@ -13,8 +13,10 @@ import ru.liga.waiter_service.producer.WaiterOrderProducer;
 public class KitchenServiceImpl implements KitchenService {
 
     private final WaiterOrderProducer waiterOrderProducer;
+
     private final WaiterOrderConverter waiterOrderConverter;
 
+    @Override
     public void sendOrderToKitchen(WaiterOrderRequest waiterOrderRequest, WaiterOrder waiterOrder) {
         waiterOrderProducer.produce(waiterOrderConverter
                 .mapToKitchenOrderRequest(waiterOrderRequest, waiterOrder.getId()));

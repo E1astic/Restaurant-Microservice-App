@@ -43,12 +43,12 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "{{baseURLKitchenService}}{{orders}}/8{{status}}{{ready}}",
+					"raw": "{{baseURLKitchenService}}{{orders}}/5{{status}}{{ready}}",
 					"host": [
 						"{{baseURLKitchenService}}{{orders}}"
 					],
 					"path": [
-						"8{{status}}{{ready}}"
+						"5{{status}}{{ready}}"
 					]
 				}
 			},

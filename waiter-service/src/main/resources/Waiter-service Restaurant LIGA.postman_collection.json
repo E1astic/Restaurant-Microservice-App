@@ -27,7 +27,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"waiterId\": 4,\r\n    \"tableNo\": 2,\r\n    \"dishIdList\": [1,2,3]\r\n}",
+					"raw": "{\r\n    \"waiterId\": 4,\r\n    \"tableNo\": 22,\r\n    \"dishIdList\": [1]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -66,12 +66,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURLWaiterService}}{{orders}}/0{{status}}",
+					"raw": "{{baseURLWaiterService}}{{orders}}/1{{status}}",
 					"host": [
 						"{{baseURLWaiterService}}{{orders}}"
 					],
 					"path": [
-						"0{{status}}"
+						"1{{status}}"
 					]
 				}
 			},

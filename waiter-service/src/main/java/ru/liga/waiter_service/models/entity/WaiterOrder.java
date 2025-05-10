@@ -14,10 +14,11 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ru.liga.waiter_service.utils.OrderStatus;
+import ru.liga.waiter_service.models.enums.OrderStatus;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -29,28 +30,34 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class WaiterOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
+    @EqualsAndHashCode.Include
     private OrderStatus status;
 
     @Column(name = "create_dttm")
+    @EqualsAndHashCode.Include
     private OffsetDateTime createDateTime;
 
     @Column(name = "table_no")
+    @EqualsAndHashCode.Include
     private String tableNo;
 
     @OneToOne(mappedBy = "order")
     private Payment payment;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "waiter_id", referencedColumnName = "id")
+    @EqualsAndHashCode.Include
     private WaiterAccount waiter;
 
     @OneToMany(mappedBy = "order")
