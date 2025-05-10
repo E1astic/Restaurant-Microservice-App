@@ -22,9 +22,9 @@ import java.time.OffsetDateTime;
 public class Payment {
 
     @Id
-    private Long id;  // является одновременно и первичным, и внешним ключом
+    private Long id;
 
-    @OneToOne()
+    @OneToOne
     @JoinColumn(name = "id", referencedColumnName = "id")
     @MapsId("id")  // значение первичного ключа Payment берется из связанной сущности WaiterOrder
     private WaiterOrder order;

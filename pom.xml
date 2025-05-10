@@ -23,6 +23,7 @@
 		<module>kitchen-service</module>
 		<module>waiter-service</module>
         <module>common</module>
+        <module>antisolid</module>
     </modules>
 
 </project>

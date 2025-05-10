@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Данное DTO используется для возвращения ID нового добавленного заказа.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

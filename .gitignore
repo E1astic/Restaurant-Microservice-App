@@ -1,40 +1,42 @@
+# General
 HELP.md
-.idea
-target/
-!../restaurant/.mvn/wrapper/maven-wrapper.jar
-!/src/main//target/
-!/src/test//target/
+.DS_Store
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-../restaurant/.idea
+# IDE Specific
+## IntelliJ IDEA
+.idea/
 *.iws
 *.iml
 *.ipr
 
-### Maven
-.DS_Store
-**/.mvn/wrapper/maven-wrapper.properties
-**/mvnw
-**/mvnw.cmd
+## STS (Spring Tool Suite)
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
 
-### NetBeans ###
+## NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!/src/main//build/
-!/src/test//build/
 
-### VS Code ###
+## VS Code
 .vscode/
+
+# Build Directories
+## Maven
+target/
+**/mvnw
+**/mvnw.cmd
+**/.mvn/wrapper/maven-wrapper.properties
+!/src/main/**/target/
+!/src/test/**/target/
+
+# Exceptions
+# Allow specific files or directories if needed
+!../restaurant/.mvn/wrapper/maven-wrapper.jar

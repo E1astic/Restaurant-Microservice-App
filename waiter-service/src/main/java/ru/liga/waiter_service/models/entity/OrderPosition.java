@@ -10,6 +10,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,6 +22,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode
 public class OrderPosition {
 
     @Id
@@ -31,11 +33,11 @@ public class OrderPosition {
     @Column(name = "dish_num")
     private Long dishNum;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "order_id", referencedColumnName = "id")
     private WaiterOrder order;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "menu_position_id")
     private Menu menuPosition;
 }

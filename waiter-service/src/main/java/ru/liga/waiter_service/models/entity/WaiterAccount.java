@@ -7,6 +7,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,20 +21,26 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class WaiterAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(name = "name")
+    @EqualsAndHashCode.Include
     private String name;
 
     @Column(name = "employment_date")
+    @EqualsAndHashCode.Include
     private OffsetDateTime employmentDate;
 
     @Column(name = "sex")
+    @EqualsAndHashCode.Include
     private String sex;
 
     @OneToMany(mappedBy = "waiter")
