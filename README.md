@@ -15,6 +15,7 @@
 - Liquibase
 - Hibernate
 - MyBatis
+- Docker
 - Kafka
 - FeignClient
 - Логирование
